@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core";
 // import TopBar from './TopBar';
 import BottomNav from "./BottomNav";
+import BacktoTop from "./BacktoTop";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
     overflow: "auto",
   },
 }));
-
 function MainLayout({ children }) {
   const classes = useStyles();
 
@@ -38,7 +38,10 @@ function MainLayout({ children }) {
       {/* <TopBar /> */}
       <div className={classes.wrapper}>
         <div className={classes.contentContainer}>
-          <div className={classes.content}>{children}</div>
+          <div className={classes.content}>
+            {children}
+            <BacktoTop />
+          </div>
         </div>
       </div>
       <BottomNav />
